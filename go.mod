@@ -1,4 +1,4 @@
-module github.com/link1st/gowebsocket
+module gowebsocket
 
 go 1.16
 

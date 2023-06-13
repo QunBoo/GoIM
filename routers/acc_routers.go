@@ -8,10 +8,10 @@
 package routers
 
 import (
-	"github.com/link1st/gowebsocket/servers/websocket"
+	"gowebsocket/servers/websocket"
 )
 
-// Websocket 路由
+// Websocket 路由初始化，login、心跳、ping
 func WebsocketInit() {
 	websocket.Register("login", websocket.LoginController)
 	websocket.Register("heartbeat", websocket.HeartbeatController)

@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/link1st/gowebsocket/helper"
-	"github.com/link1st/gowebsocket/lib/cache"
-	"github.com/link1st/gowebsocket/models"
+	"gowebsocket/helper"
+	"gowebsocket/lib/cache"
+	"gowebsocket/models"
 )
 
 // 连接管理

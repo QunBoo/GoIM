@@ -7,14 +7,17 @@
 
 package websocket
 
+//TODO:为什么本机的ip初始化为10.63.212.220:9001?
+// rpc server 启动 9001
+// WebSocket 启动程序成功 10.63.212.220 9001
 import (
 	"errors"
 	"fmt"
 	"time"
 
-	"github.com/link1st/gowebsocket/lib/cache"
-	"github.com/link1st/gowebsocket/models"
-	"github.com/link1st/gowebsocket/servers/grpcclient"
+	"gowebsocket/lib/cache"
+	"gowebsocket/models"
+	"gowebsocket/servers/grpcclient"
 
 	"github.com/redis/go-redis/v9"
 )
@@ -24,13 +27,14 @@ func UserList(appId uint32) (userList []string) {
 
 	userList = make([]string, 0)
 	currentTime := uint64(time.Now().Unix())
+	//收集全网的servers
 	servers, err := cache.GetServerAll(currentTime)
 	if err != nil {
 		fmt.Println("给全体用户发消息", err)
 
 		return
 	}
-
+	//根据全网的servers查找所有连接的user
 	for _, server := range servers {
 		var (
 			list []string

@@ -16,9 +16,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	"github.com/link1st/gowebsocket/common"
-	"github.com/link1st/gowebsocket/models"
-	"github.com/link1st/gowebsocket/protobuf"
+	"gowebsocket/common"
+	"gowebsocket/models"
+	"gowebsocket/protobuf"
 )
 
 // rpc client

@@ -11,7 +11,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/link1st/gowebsocket/lib/redislib"
+	"gowebsocket/lib/redislib"
 )
 
 const (

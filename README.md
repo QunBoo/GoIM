@@ -82,7 +82,7 @@
 ![网站架构图](http://img.91vh.com/img/%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E5%9B%BE.png)
 
 #### 1.2 项目体验
-- [项目地址 gowebsocket](https://github.com/link1st/gowebsocket)
+- [项目地址 gowebsocket](https://gowebsocket)
 - [IM-聊天首页](http://im.91vh.com/home/index) 或者在新的窗口打开 http://im.91vh.com/home/index
 - 打开连接以后进入聊天界面
 - 多人群聊可以同时打开两个窗口
@@ -574,7 +574,7 @@ github.com/golang/protobuf
 ```
 git clone git@github.com:link1st/gowebsocket.git
 # 或
-git clone https://github.com/link1st/gowebsocket.git
+git clone https://gowebsocket.git
 ```
 - 修改项目配置
 
@@ -1061,8 +1061,8 @@ net.ipv4.tcp_wmem = 4096 4096 16777216
 ## 7、如何基于webSocket实现一个分布式Im
 ### 7.1 说明
 - 参考本项目源码
-- [gowebsocket v1.0.0 单机版Im系统](https://github.com/link1st/gowebsocket/tree/v1.0.0)
-- [gowebsocket v2.0.0 分布式Im系统](https://github.com/link1st/gowebsocket/tree/v2.0.0)
+- [gowebsocket v1.0.0 单机版Im系统](https://gowebsocket/tree/v1.0.0)
+- [gowebsocket v2.0.0 分布式Im系统](https://gowebsocket/tree/v2.0.0)
 
 - 为了方便演示，IM系统和webSocket(acc)系统合并在一个系统中
 - IM系统接口:
@@ -1209,11 +1209,11 @@ IM实现细节:
 
 github 搜:link1st 查看项目 gowebsocket
 
-[https://github.com/link1st/gowebsocket](https://github.com/link1st/gowebsocket)
+[https://gowebsocket](https://gowebsocket)
 
 ### 意见反馈
 
-- 在项目中遇到问题可以直接在这里找找答案或者提问 [issues](https://github.com/link1st/gowebsocket/issues)
+- 在项目中遇到问题可以直接在这里找找答案或者提问 [issues](https://gowebsocket/issues)
 - 也可以添加我的微信(申请信息填写:公司、姓名，我好备注下)，直接反馈给我
 <br/>
 <p align="center">

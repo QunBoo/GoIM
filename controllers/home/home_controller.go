@@ -13,8 +13,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/link1st/gowebsocket/servers/websocket"
 	"github.com/spf13/viper"
+	"gowebsocket/servers/websocket"
 )
 
 // 聊天页面

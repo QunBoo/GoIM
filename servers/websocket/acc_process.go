@@ -12,8 +12,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/link1st/gowebsocket/common"
-	"github.com/link1st/gowebsocket/models"
+	"gowebsocket/common"
+	"gowebsocket/models"
 )
 
 type DisposeFunc func(client *Client, seq string, message []byte) (code uint32, msg string, data interface{})

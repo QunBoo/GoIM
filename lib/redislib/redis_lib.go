@@ -31,6 +31,9 @@ func ExampleNewClient() {
 
 	pong, err := client.Ping(context.Background()).Result()
 	fmt.Println("初始化redis:", pong, err)
+	if err != nil {
+		panic(fmt.Sprintf("初始化redis失败:%v", err))
+	}
 	// Output: PONG <nil>
 }
 

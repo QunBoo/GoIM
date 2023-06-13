@@ -7,7 +7,7 @@
 
 package models
 
-import "github.com/link1st/gowebsocket/common"
+import "gowebsocket/common"
 
 const (
 	MessageTypeText = "text"

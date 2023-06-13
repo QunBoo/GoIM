@@ -11,7 +11,7 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/link1st/gowebsocket/common"
+	"gowebsocket/common"
 )
 
 type BaseController struct {

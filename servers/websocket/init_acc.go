@@ -12,8 +12,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/link1st/gowebsocket/helper"
-	"github.com/link1st/gowebsocket/models"
+	"gowebsocket/helper"
+	"gowebsocket/models"
 
 	"github.com/gorilla/websocket"
 	"github.com/spf13/viper"
@@ -42,6 +42,7 @@ func GetServer() (server *models.Server) {
 	return
 }
 
+// 对比参数的ip地址和初始化时设定的本机ip地址，鉴别是否是本机
 func IsLocal(server *models.Server) (isLocal bool) {
 	if server.Ip == serverIp && server.Port == serverPort {
 		isLocal = true

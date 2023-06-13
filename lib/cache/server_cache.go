@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/link1st/gowebsocket/lib/redislib"
-	"github.com/link1st/gowebsocket/models"
+	"gowebsocket/lib/redislib"
+	"gowebsocket/models"
 )
 
 const (
@@ -64,14 +64,20 @@ func DelServerInfo(server *models.Server) (err error) {
 	return
 }
 
+// 根据Redis中存储的所有服务器信息查找服务器，返回服务器列表，以models.Server存储
 func GetServerAll(currentTime uint64) (servers []*models.Server, err error) {
 
 	servers = make([]*models.Server, 0)
+	//得到一个在Redis服务器中存储服务器信息的哈希键
 	key := getServersHashKey()
 
 	redisClient := redislib.GetClient()
 
 	val, err := redisClient.Do(context.Background(), "hGetAll", key).Result()
+	if err != nil {
+		fmt.Println("Redis hGetAll", key, err)
+		return
+	}
 
 	valByte, _ := json.Marshal(val)
 	fmt.Println("GetServerAll", key, string(valByte))
@@ -79,7 +85,6 @@ func GetServerAll(currentTime uint64) (servers []*models.Server, err error) {
 	serverMap, err := redisClient.HGetAll(context.Background(), key).Result()
 	if err != nil {
 		fmt.Println("SetServerInfo", key, err)
-
 		return
 	}
 

@@ -9,9 +9,9 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/link1st/gowebsocket/controllers/home"
-	"github.com/link1st/gowebsocket/controllers/systems"
-	"github.com/link1st/gowebsocket/controllers/user"
+	"gowebsocket/controllers/home"
+	"gowebsocket/controllers/systems"
+	"gowebsocket/controllers/user"
 )
 
 func Init(router *gin.Engine) {

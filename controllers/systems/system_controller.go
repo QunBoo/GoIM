@@ -12,9 +12,9 @@ import (
 	"runtime"
 
 	"github.com/gin-gonic/gin"
-	"github.com/link1st/gowebsocket/common"
-	"github.com/link1st/gowebsocket/controllers"
-	"github.com/link1st/gowebsocket/servers/websocket"
+	"gowebsocket/common"
+	"gowebsocket/controllers"
+	"gowebsocket/servers/websocket"
 )
 
 // 查询系统状态

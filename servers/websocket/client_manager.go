@@ -1,10 +1,3 @@
-/**
- * Created by GoLand.
- * User: link1st
- * Date: 2019-07-25
- * Time: 16:24
- */
-
 package websocket
 
 import (
@@ -117,7 +110,7 @@ func (manager *ClientManager) DelClients(client *Client) {
 	}
 }
 
-// 获取用户的连接
+// 获取用户的Client用户连接类
 func (manager *ClientManager) GetUserClient(appId uint32, userId string) (client *Client) {
 
 	manager.UserLock.RLock()
@@ -379,7 +372,7 @@ func GetUserList(appId uint32) (userList []string) {
 // 全员广播
 func AllSendMessages(appId uint32, userId string, data string) {
 	fmt.Println("全员广播", appId, userId, data)
-
+	//发送消息排除自己
 	ignoreClient := clientManager.GetUserClient(appId, userId)
 	clientManager.sendAppIdAll([]byte(data), appId, ignoreClient)
 }

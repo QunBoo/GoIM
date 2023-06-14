@@ -7,9 +7,6 @@
 
 package websocket
 
-//TODO:为什么本机的ip初始化为10.63.212.220:9001?
-// rpc server 启动 9001
-// WebSocket 启动程序成功 10.63.212.220 9001
 import (
 	"errors"
 	"fmt"
@@ -116,7 +113,9 @@ func SendUserMessage(appId uint32, userId string, msgId, message string) (sendRe
 		fmt.Println("用户不在线", key)
 		return false, nil
 	}
+	//根据查找到的server ip、port进行信息发送
 	server := models.NewServer(info.AccIp, info.AccPort)
+	//使用rpc发送消息
 	msg, err := grpcclient.SendMsg(server, msgId, appId, userId, models.MessageCmdMsg, models.MessageCmdMsg, message)
 	if err != nil {
 		fmt.Println("给用户发送消息失败", key, err)

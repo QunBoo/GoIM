@@ -1,22 +1,16 @@
-/**
-* Created by GoLand.
-* User: link1st
-* Date: 2019-07-25
-* Time: 12:11
- */
-
 package user
 
 import (
 	"fmt"
 	"strconv"
 
-	"github.com/gin-gonic/gin"
 	"gowebsocket/common"
 	"gowebsocket/controllers"
 	"gowebsocket/lib/cache"
 	"gowebsocket/models"
 	"gowebsocket/servers/websocket"
+
+	"github.com/gin-gonic/gin"
 )
 
 // 查看全部在线用户

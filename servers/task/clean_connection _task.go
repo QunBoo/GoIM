@@ -1,10 +1,3 @@
-/**
-* Created by GoLand.
-* User: link1st
-* Date: 2019-07-31
-* Time: 15:17
- */
-
 package task
 
 import (

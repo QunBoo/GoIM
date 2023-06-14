@@ -27,7 +27,7 @@ func getSubmitAgainKey(from string, value string) (key string) {
 	return
 }
 
-// 重复提交
+// 生成键值对并set到Redis里，查看是否是重复提交
 // return true:重复提交 false:第一次提交
 func submitAgain(from string, second int, value string) (isSubmitAgain bool) {
 
@@ -42,7 +42,7 @@ func submitAgain(from string, second int, value string) (isSubmitAgain bool) {
 
 		return
 	}
-
+	//if number == 1说明是第一次提交，如果键不存在则设置成功并返回 1；否则返回0
 	if number != 1 {
 
 		return

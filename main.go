@@ -2,18 +2,21 @@ package main
 
 //TODO：文字发送逻辑？
 //TODO：如何调用、利用的Redis？
-//TODO:gRPC的作用？
+//TODO: gRPC的作用？
 //TODO：gRPC与prtocol buffer研究
+//TODO：如何实现的多服务器？——grpc
 
+//TODO:实现多服务器上的部署
+
+//TODO：代码重构，结构重新划分
 //TODO：增加单对单聊天
+//TODO：增加用户登录、token鉴权，MySQL
 
 import (
 	"fmt"
 	"io"
 	"net/http"
 	"os"
-	"os/exec"
-	"time"
 
 	"gowebsocket/lib/redislib"
 	"gowebsocket/routers"
@@ -49,7 +52,7 @@ func main() {
 	go grpcserver.Init()
 
 	//打开网页
-	go open()
+	// go open()
 
 	httpPort := viper.GetString("app.httpPort")
 	http.ListenAndServe(":"+httpPort, router)
@@ -73,7 +76,7 @@ func initConfig() {
 
 	err := viper.ReadInConfig()
 	if err != nil {
-		errors := fmt.Errorf("Fatal error config file: %s ", err)
+		errors := fmt.Errorf("fatal error config file: %s ", err)
 		panic(errors)
 	}
 
@@ -86,6 +89,7 @@ func initRedis() {
 	redislib.ExampleNewClient()
 }
 
+/*
 // 打开网页
 func open() {
 
@@ -99,3 +103,4 @@ func open() {
 	cmd := exec.Command("open", httpUrl)
 	cmd.Output()
 }
+*/

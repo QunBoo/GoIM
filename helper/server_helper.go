@@ -11,7 +11,7 @@ import (
 	"net"
 )
 
-// GetServerIp
+// GetServerIp:调用net.Interfaces实现获取本机的外部IP地址
 // 问题：我在本地多网卡机器上，运行分布式场景，此函数返回的ip有误导致rpc连接失败。 遂google结果如下：
 // 1、https://www.jianshu.com/p/301aabc06972
 // 2、https://www.cnblogs.com/chaselogs/p/11301940.html
@@ -23,6 +23,7 @@ func GetServerIp() string {
 	return ip.String()
 }
 
+// 通过net.Interfaces获取外部IP
 func externalIP() (net.IP, error) {
 	ifaces, err := net.Interfaces()
 	if err != nil {

@@ -12,12 +12,13 @@ import (
 	"net/http"
 	"strconv"
 
+	"gowebsocket/servers/websocket"
+
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
-	"gowebsocket/servers/websocket"
 )
 
-// 聊天页面
+// 加载聊天页面
 func Index(c *gin.Context) {
 
 	appIdStr := c.Query("appId")

@@ -1,17 +1,11 @@
-/**
-* Created by GoLand.
-* User: link1st
-* Date: 2019-07-25
-* Time: 12:20
- */
-
 package routers
 
 import (
-	"github.com/gin-gonic/gin"
 	"gowebsocket/controllers/home"
 	"gowebsocket/controllers/systems"
 	"gowebsocket/controllers/user"
+
+	"github.com/gin-gonic/gin"
 )
 
 func Init(router *gin.Engine) {

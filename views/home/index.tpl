@@ -360,7 +360,7 @@
 
         // 连接webSocket
         ws = new WebSocket("ws://{{ .webSocketUrl }}/acc");
-
+        //当连接建立时自动调用函数
         ws.onopen = function(evt) {
             console.log("Connection open ...");
 
@@ -380,7 +380,7 @@
             setInterval(heartbeat, 30 * 1000)
         };
 
-        // 收到消息
+        // 收到消息时，调用函数
         ws.onmessage = function(evt) {
             console.log("Received Message: " + evt.data);
             data_array = JSON.parse(evt.data);

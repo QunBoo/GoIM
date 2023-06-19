@@ -16,6 +16,7 @@ import (
 	"gowebsocket/models"
 )
 
+// 处置函数模板
 type DisposeFunc func(client *Client, seq string, message []byte) (code uint32, msg string, data interface{})
 
 var (
@@ -23,7 +24,7 @@ var (
 	handlersRWMutex sync.RWMutex
 )
 
-// 注册
+// handler注册到全局的map handlers[key]里
 func Register(key string, value DisposeFunc) {
 	handlersRWMutex.Lock()
 	defer handlersRWMutex.Unlock()
@@ -80,9 +81,9 @@ func ProcessData(client *Client, message []byte) {
 	)
 
 	// request
-	fmt.Println("acc_request", cmd, client.Addr)
+	fmt.Println("接入模块服务请求", cmd, client.Addr)
 
-	// 采用 map 注册的方式
+	// 在句柄注册的map中寻找句柄，并调用句柄，得到响应Response
 	if value, ok := getHandlers(cmd); ok {
 		code, msg, data = value(client, seq, requestData)
 	} else {
@@ -100,7 +101,7 @@ func ProcessData(client *Client, message []byte) {
 
 		return
 	}
-
+	// fmt.Printf("《《《《headByte: %s\n", headByte)
 	client.SendMsg(headByte)
 
 	fmt.Println("acc_response send", client.Addr, client.AppId, client.UserId, "cmd", cmd, "code", code)

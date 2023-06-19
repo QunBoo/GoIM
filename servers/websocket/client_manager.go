@@ -280,7 +280,7 @@ func (manager *ClientManager) EventUnregister(client *Client) {
 	}
 }
 
-// 管道处理程序
+// 管道处理程序，管道事务的处理，包括建立连接、用户登录、断开连接、广播事件
 func (manager *ClientManager) start() {
 	for {
 		select {

@@ -11,7 +11,7 @@ import (
 	"gowebsocket/servers/websocket"
 )
 
-// Websocket 路由初始化，login、心跳、ping
+// Websocket 服务初始化，login、心跳、ping,就是将三个函数映射到全局map中可以通过"cmd":"login"调用
 func WebsocketInit() {
 	websocket.Register("login", websocket.LoginController)
 	websocket.Register("heartbeat", websocket.HeartbeatController)

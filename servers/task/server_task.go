@@ -9,11 +9,12 @@ import (
 	"gowebsocket/servers/websocket"
 )
 
+// 服务器定时注册初始化，定时进行服务器注册，将服务器信息输入到redis中，以hashmap形式存储
 func ServerInit() {
 	Timer(2*time.Second, 60*time.Second, server, "", serverDefer, "")
 }
 
-// 服务注册
+// 服务器注册函数，调用函数获取本机"ip:port"并设置到redis里
 func server(param interface{}) (result bool) {
 	result = true
 

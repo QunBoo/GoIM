@@ -4,7 +4,7 @@ import "time"
 
 type TimerFunc func(interface{}) bool
 
-/**
+/*启动定时器
  * 定时调用
  * @delay 首次延时
  * @tick  间隔

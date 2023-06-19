@@ -41,21 +41,21 @@ func main() {
 	routers.Init(router)
 	routers.WebsocketInit()
 
-	// 定时任务
+	// 定时清理连接任务
 	task.Init()
-
-	// 服务注册
+	// 服务器注册
 	task.ServerInit()
 
 	go websocket.StartWebSocket()
 	// grpc
 	go grpcserver.Init()
-
+	// fmt.Println("Current number of goroutines AFTER grpcserver.Init(): ", runtime.NumGoroutine())   //5个goroutine
 	//打开网页
 	// go open()
 
 	httpPort := viper.GetString("app.httpPort")
 	http.ListenAndServe(":"+httpPort, router)
+	// fmt.Println("Current number of goroutines AFTER ListenAndServe: ", runtime.NumGoroutine())
 
 }
 

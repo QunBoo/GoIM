@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// 基本功能router注册
 func Init(router *gin.Engine) {
 	router.LoadHTMLGlob("views/**/*")
 

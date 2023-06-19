@@ -82,12 +82,10 @@ func (c *Client) read() {
 		_, message, err := c.Socket.ReadMessage()
 		if err != nil {
 			fmt.Println("读取客户端数据 错误", c.Addr, err)
-
 			return
 		}
-
 		// 处理程序
-		fmt.Println("读取客户端数据 处理:", string(message))
+		fmt.Println("[Cli::read()]读取客户端数据 处理:", string(message))
 		ProcessData(c, message)
 	}
 }
@@ -104,7 +102,6 @@ func (c *Client) write() {
 	defer func() {
 		clientManager.Unregister <- c
 		c.Socket.Close()
-		fmt.Println("Client发送数据 defer", c)
 	}()
 
 	for {
@@ -116,7 +113,7 @@ func (c *Client) write() {
 
 				return
 			}
-
+			fmt.Printf("[Cli::write()]Client发送数据%s\n", message)
 			c.Socket.WriteMessage(websocket.TextMessage, message)
 		}
 	}
@@ -135,7 +132,7 @@ func (c *Client) SendMsg(msg []byte) {
 			fmt.Println("SendMsg stop:", r, string(debug.Stack()))
 		}
 	}()
-
+	fmt.Printf("[Cli::SendMsg]:%s\n", msg)
 	c.Send <- msg
 }
 

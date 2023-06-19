@@ -1,10 +1,3 @@
-/**
- * Created by GoLand.
- * User: link1st
- * Date: 2019-07-25
- * Time: 16:04
- */
-
 package websocket
 
 import (
@@ -36,6 +29,7 @@ func GetAppIds() []uint32 {
 	return appIds
 }
 
+// 获取本机Ip和port
 func GetServer() (server *models.Server) {
 	server = models.NewServer(serverIp, serverPort)
 
@@ -70,15 +64,15 @@ func GetDefaultAppId() (appId uint32) {
 	return
 }
 
-// 启动程序
+// 启动websocket服务器程序，设定serverPort和webSocketPort
 func StartWebSocket() {
 
 	serverIp = helper.GetServerIp()
 
-	webSocketPort := viper.GetString("app.webSocketPort")
+	webSocketPort := viper.GetString("app.webSocketPort") //8089
 	rpcPort := viper.GetString("app.rpcPort")
 
-	serverPort = rpcPort
+	serverPort = rpcPort //9001
 
 	http.HandleFunc("/acc", wsPage)
 
@@ -89,6 +83,7 @@ func StartWebSocket() {
 	http.ListenAndServe(":"+webSocketPort, nil)
 }
 
+// 升级协议，在tpl文件中访问对应的链路实现函数调用
 func wsPage(w http.ResponseWriter, req *http.Request) {
 
 	// 升级协议

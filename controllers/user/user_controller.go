@@ -85,6 +85,7 @@ func SendMessage(c *gin.Context) {
 }
 
 // 给全员发送消息
+// TODO：实现端到端逻辑的信息发送
 func SendMessageAll(c *gin.Context) {
 	// 获取参数
 	appIdStr := c.PostForm("appId")

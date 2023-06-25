@@ -29,7 +29,8 @@ func Index(c *gin.Context) {
 	}
 
 	fmt.Println("http_request 聊天首页", appId)
-
+	//设定模板index.tpl所需要使用的数据，通过c.HTML传输过去
+	//TODO:在实质部署到服务器的时候，这里httpUrl应该传入server的外网ip地址以及对应的port
 	data := gin.H{
 		"title":        "聊天首页",
 		"appId":        appId,

@@ -1,11 +1,6 @@
 package main
 
-//TODO：文字发送逻辑？
-//TODO：如何调用、利用的Redis？
-//TODO: gRPC的作用？
-//TODO：gRPC与prtocol buffer研究
-//TODO：如何实现的多服务器？——grpc
-
+//TODO：为什么多服务可以通过一个域名访问？
 //TODO:实现多服务器上的部署
 
 //TODO：代码重构，结构重新划分

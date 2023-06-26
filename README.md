@@ -3,4 +3,4 @@ Go+Gin+websocket+Redis实现的IM即时通讯系统
 
 ## Docker build, docker run
 docker build -t go-im  
-docker run --link redis-test:redis -e HOST_IP=<YOUR IP ADDRESS> -p 8080:8080 -p 8089:8089 -p 9001:9001 go-im    
+docker run --link redis-test:redis -e HOST_IP=[`YOUR IP ADDRESS`] -p 8080:8080 -p 8089:8089 -p 9001:9001 go-im    

@@ -4,6 +4,7 @@ import (
 	"gowebsocket/controllers/home"
 	"gowebsocket/controllers/systems"
 	"gowebsocket/controllers/user"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,6 +12,10 @@ import (
 // 基本功能router注册
 func Init(router *gin.Engine) {
 	router.LoadHTMLGlob("views/**/*")
+
+	router.GET("/", func(c *gin.Context) {
+		c.Redirect(http.StatusMovedPermanently, "/home/index")
+	})
 
 	// 用户组
 	userRouter := router.Group("/user")

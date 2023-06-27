@@ -1,7 +1,9 @@
 package main
 
 //TODO：代码重构，实现逻辑上端到端传输
+//TODO: 性能测试，
 //TODO：增加单对单聊天
+//TODO: 实现文件传输
 //TODO：增加用户登录、token鉴权，MySQL
 
 import (
